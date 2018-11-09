@@ -42,6 +42,7 @@ class LifeCycleSample extends Component {
     /*
      * props나 state를 변경했을 때 리렌더링을 시작할지 여부를 지정
      * 반드시 true나 false값을 반환해야 함
+     * 컴포넌트 업데이트의 성능을 개선할 때에 중요하게 사용됨!!!!
      */
 
     console.log('shouldComponentUpdate', nextProps, nextState);
