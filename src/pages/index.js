@@ -1,15 +1,9 @@
 import Home from './home';
-import Cart from './cart';
-import Upload from './upload';
-import Bookmark from './bookmark';
-import Mypage from './mypage';
 import NoMatch from './noMatch';
+import Create from './create';
 
 export {
   Home,
-  Cart,
-  Upload,
-  Bookmark,
-  Mypage,
-  NoMatch
+  NoMatch,
+  Create
 }

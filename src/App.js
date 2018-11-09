@@ -1,39 +1,28 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import LifeCycleSample from './LifeCycleSample';
 
-import { Header, Footer } from './components';
-import { Home, Cart, Upload, Bookmark, Mypage, NoMatch } from './pages';
-
-import './styles/app.less';
-
+function getRandomColor() {
+  return '#' + Math.floor(Math.random() * 16777215).toString(16);
+}
 
 class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
+  state = {
+    color: '#000000'
+  }
 
-    };
+  handleClick = () => {
+    this.setState({
+      color: getRandomColor()
+    });
   }
 
   render() {
     return (
-      <Router>
-        <div className="flex-box-group flex-box-group--vertical">
-          <Header />
-          <div className="container flex-box-item flex-box-item--center">
-            <Switch>
-              <Route exact path="/" component={Home} />
-              <Route path="/cart" component={Cart} />
-              <Route path="/upload" component={Upload} />
-              <Route path="/bookmark" component={Bookmark} />
-              <Route path="/mypage" component={Mypage} />
-              <Route component={NoMatch} />
-            </Switch>
-          </div>
-          <Footer />
-        </div>
-      </Router>
-    )
+      <div>
+        <button onClick={this.handleClick}>랜덤 색상</button>
+        <LifeCycleSample color={this.state.color}/>
+      </div>
+    );
   }
 }
 
